@@ -1,0 +1,30 @@
+.bookContainer {
+  display: flex;
+  border: 1px solid gray;
+  height: 150px;
+  justify-content: space-between;
+  padding: 5px;
+
+  .bookBody {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .graphicContainer {
+    width: 100px;
+  }
+
+  hr {
+    background-color: lightgray;
+    border: none;
+    height: 80%;
+    width: 2px;
+    align-self: center;
+  }
+
+  .bookFooter {
+    width: 20%;
+    margin-left: 5px;
+  }
+}
