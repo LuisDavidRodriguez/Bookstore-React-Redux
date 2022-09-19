@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit/dist';
 import reducerBooks from './books/books';
 import reducerCategories from './categories/categories';
 
