@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
 import BookItem from '../BookItem/BookItem';
 import FormAdd from '../FormAdd/FormAdd';
 import './books.scss';
 
 const Books = () => {
-  const [books] = useState([{ id: '0', title: 'Panche villa', author: 'Erik' }, { id: '1', title: 'Juana la cubana', author: 'Federico' }]);
+  const books = useSelector((state) => state.books, shallowEqual);
 
   const listBooks = books.map((item) => (
     <BookItem
@@ -12,6 +12,7 @@ const Books = () => {
       id={item.id}
       title={item.title}
       author={item.author}
+      category={item.category}
     />
   ));
 

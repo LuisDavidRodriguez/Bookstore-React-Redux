@@ -1,7 +1,12 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOKS';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOKS';
 
-const initialState = [];
+const initialState = [{
+  id: '0', title: 'Viaje al centro de la tierra', author: 'Erik', category: 'action',
+},
+{
+  id: '1', title: 'How to programm in java 7', author: 'Federico', category: 'Romance',
+}];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,7 +15,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         {
           id: action.id,
-          title: action.tiltle,
+          title: action.title,
           author: action.author,
           category: action.category,
         },
