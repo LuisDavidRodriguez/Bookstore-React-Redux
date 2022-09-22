@@ -3,12 +3,7 @@ const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const ADD_ARR_BOOK = 'bookstore/books/ADD_ARR_BOOK';
 
-const initialState = [{
-  id: '0', title: 'Viaje al centro de la tierra', author: 'Erik', category: 'action',
-},
-{
-  id: '1', title: 'How to programm in java 7', author: 'Federico', category: 'Romance',
-}];
+const initialState = [];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -18,8 +13,8 @@ const reducer = (state = initialState, action) => {
         action.payload,
       ];
 
-    case REMOVE_BOOK:
-      return state.filter((item) => item.id !== action.id);
+    case REMOVE_BOOK + '/fulfilled':
+      return state.filter((item) => item.id !== action.payload);
 
     case ADD_ARR_BOOK + '/fulfilled':
       return [
@@ -56,5 +51,6 @@ export {
   removeBook,
   ADD_ARR_BOOK,
   ADD_BOOK,
+  REMOVE_BOOK,
 };
 export default reducer;

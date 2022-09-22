@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProgressPie from '../ProgressPie/ProgressPie';
-import { removeBook } from '../../redux/books/books';
+// import { removeBook } from '../../redux/books/books';
+import { removeBooksApi } from '../../redux/books/apiBook';
 import './bookItem.scss';
 
 const BookItem = (props) => {
@@ -25,7 +26,7 @@ const BookItem = (props) => {
 
           <div className="buttonsContainer">
             <button className="btn1" type="button">Comments</button>
-            <button className="btn1" type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
+            <button className="btn1" type="button" onClick={() => dispatch(removeBooksApi(id))}>Remove</button>
             <button className="btn1" type="button">Edit</button>
           </div>
         </section>

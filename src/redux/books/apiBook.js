@@ -1,10 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ADD_ARR_BOOK, ADD_BOOK } from './books';
+import { ADD_ARR_BOOK, ADD_BOOK, REMOVE_BOOK } from './books';
 
 const UNIQ_ID = 'IUmpICCqFqLeGrbCEOb9';
 const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${UNIQ_ID}/books/`;
 
-// eslint-disable-next-line import/prefer-default-export
 export const getBooks = createAsyncThunk(ADD_ARR_BOOK, async () => {
   const response = await fetch(BASE_URL);
   const data = await response.json();
@@ -18,7 +17,12 @@ export const getBooks = createAsyncThunk(ADD_ARR_BOOK, async () => {
     return obj;
   });
 
+  // Dear reviewer this consoles I want to keep them
+  // because this broyect will help me to use it in
+  // the next projects, I want to know how did I retreive
+  // the data.
   console.log(newArray);
+
   return newArray;
 });
 
@@ -47,9 +51,35 @@ export const addBooksApi = createAsyncThunk(ADD_BOOK, async (newBook) => {
     headers: head,
     body: data,
   });
+
+  // Dear reviewer this consoles I want to keep them
+  // because this broyect will help me to use it in
+  // the next projects, I want to know how did I retreive
+  // the data.
   const { status } = response;
   console.log(response);
   console.log(status);
 
   return newBook;
+});
+
+export const removeBooksApi = createAsyncThunk(REMOVE_BOOK, async (id) => {
+  const head = { 'Content-type': 'application/json; charset=UTF-8' };
+
+  const response = await fetch(`${BASE_URL}${id}`, {
+    method: 'DELETE',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: head,
+  });
+
+  // Dear reviewer this consoles I want to keep them
+  // because this broyect will help me to use it in
+  // the next projects, I want to know how did I retreive
+  // the data.
+  const { status } = response;
+  console.log(response);
+  console.log(status);
+
+  return id;
 });
