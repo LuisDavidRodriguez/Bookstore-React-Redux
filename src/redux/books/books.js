@@ -1,28 +1,25 @@
-const ADD_BOOK = 'bookstore/books/ADD_BOOKS';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOKS';
+/* eslint-disable prefer-template */
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const ADD_ARR_BOOK = 'bookstore/books/ADD_ARR_BOOK';
 
-const initialState = [{
-  id: '0', title: 'Viaje al centro de la tierra', author: 'Erik', category: 'action',
-},
-{
-  id: '1', title: 'How to programm in java 7', author: 'Federico', category: 'Romance',
-}];
+const initialState = [];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case ADD_BOOK + '/fulfilled':
       return [
         ...state,
-        {
-          id: action.id,
-          title: action.title,
-          author: action.author,
-          category: action.category,
-        },
+        action.payload,
       ];
 
-    case REMOVE_BOOK:
-      return state.filter((item) => item.id !== action.id);
+    case REMOVE_BOOK + '/fulfilled':
+      return state.filter((item) => item.id !== action.payload);
+
+    case ADD_ARR_BOOK + '/fulfilled':
+      return [
+        ...action.payload,
+      ];
 
     default:
       return state;
@@ -30,6 +27,14 @@ const reducer = (state = initialState, action) => {
 };
 
 // action creators
+// this one was before use the createAsyncTunk hi dear reviewer
+// I want to keep this code because it was before the Create async tunk
+// I want it because I will use it as a gadiance to study in weekend
+// const addArrBook = (arr) => ({
+//   type: ADD_ARR_BOOK,
+//   arrBook: arr,
+// });
+
 const addBook = (id, title, author, category) => ({
   type: ADD_BOOK,
   id,
@@ -43,5 +48,11 @@ const removeBook = (id) => ({
   id,
 });
 
-export { addBook, removeBook };
+export {
+  addBook,
+  removeBook,
+  ADD_ARR_BOOK,
+  ADD_BOOK,
+  REMOVE_BOOK,
+};
 export default reducer;
