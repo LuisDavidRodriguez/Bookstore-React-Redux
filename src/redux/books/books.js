@@ -27,7 +27,9 @@ const reducer = (state = initialState, action) => {
 };
 
 // action creators
-// this one was before use the createAsyncTunk
+// this one was before use the createAsyncTunk hi dear reviewer
+// I want to keep this code because it was before the Create async tunk
+// I want it because I will use it as a gadiance to study in weekend
 // const addArrBook = (arr) => ({
 //   type: ADD_ARR_BOOK,
 //   arrBook: arr,
