@@ -1,0 +1,12 @@
+@use './variables' as v;
+
+@function getBreakPoint($key: 'medium') {
+  @if map-has-key(v.$breakPoints,  $key) {
+    @return map-get(v.$breakPoints, $key );
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retreived with key: `#{$key}`."
+      + " Available color are: #{map-keys(v.$breakPoints)}.";
+  }
+}

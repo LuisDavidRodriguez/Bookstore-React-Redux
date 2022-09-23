@@ -1,30 +1,121 @@
+@use '../../styles/mixin';
+@use '../../styles/variables' as v;
+
 .bookContainer {
   display: flex;
-  border: 1px solid gray;
-  height: 150px;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 400px;
   padding: 5px;
+  margin: 15px 0;
+  border-radius: 5px;
+  box-shadow: 3px 2px 5px lightgray, -1px -1px 5px lightgray;
 
-  .bookBody {
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
+  @include mixin.small {
+    height: 300px;
   }
 
-  .graphicContainer {
-    width: 100px;
+  @include mixin.customMin (580) {
+    flex-direction: row;
+    height: 150px;
+    align-items: center;
+  }
+
+  .bookBody {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5px;
+
+    @include mixin.small {
+      flex-direction: row;
+    }
+
+    @include mixin.customMin(580) {
+      width: 70%;
+    }
+
+
+    .infoBook {
+      width: 100%;
+
+      @include mixin.small {
+        width: 60%;
+      }
+
+      .title {
+        max-height: 40px;
+        line-height: 18px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      .buttonsContainer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 5px;
+
+        @include mixin.small {
+          justify-content: start;
+        }
+      }
+    }
+
+    .graphicContainer {      
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include mixin.small {
+        width: 40%;
+        margin-top: 0;
+      }
+    }
   }
 
   hr {
     background-color: lightgray;
     border: none;
-    height: 80%;
-    width: 2px;
+    height: 2px;
+    width: 90%;
     align-self: center;
+
+    @include mixin.customMin (580) {
+      height: 90%;
+      width: 2px;
+    }
   }
 
   .bookFooter {
-    width: 20%;
-    margin-left: 5px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;    
+
+    @include mixin.customMin (580) {
+      height: 100%;
+      width: 30%;      
+      margin-left: 5px;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 20px;
+    }
+
+    &__title {
+      color: gray;
+      font-family: v.$fontFamilyRobotoSlab;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
   }
 }

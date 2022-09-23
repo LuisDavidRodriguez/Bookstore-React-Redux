@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import './index.css';
+import './styles/_global.scss';
+import './styles/_buttons.scss';
+import './styles/_typography.scss';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';

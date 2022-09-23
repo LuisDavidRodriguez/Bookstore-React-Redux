@@ -1,9 +1,10 @@
-@use '../1_abstracts/variables' as v;
+@use './variables' as v;
 
 .button {
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.5s linear;
+  transition: transform 0.3s linear;
+  font-size: 1em;
 }
 
 .btn1 {

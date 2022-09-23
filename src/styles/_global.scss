@@ -1,3 +1,23 @@
+@use './mixin';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+
+  @include mixin.base {
+    font-size: 16px;
+  }
+
+  @include mixin.small {
+    font-size: 16px;
+  }
+}
+
 body {
   margin: 0;
   font-family:
