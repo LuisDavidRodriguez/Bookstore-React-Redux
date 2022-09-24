@@ -1,0 +1,72 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixin';
+@use '../../styles/functions' as f;
+
+$shadowColor: rgba(50, 50, 50, 0.75);
+
+@mixin boxShdowTop {
+  -webkit-box-shadow: 0 -4px 3px $shadowColor, 0 1px 3px $shadowColor;
+  -moz-box-shadow: 0 -4px 3px $shadowColor, 0 1px 3px $shadowColor;
+  box-shadow: 0 -4px 3px $shadowColor, 0 1px 3px $shadowColor;
+}
+
+.form {
+  border: none;
+  border-radius: 5px;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  @include boxShdowTop();
+
+  @include mixin.small {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .inputDiv {
+    width: 100%;
+    text-align: center;
+
+    @include mixin.small {
+      width: 60%;
+    }
+
+    @include mixin.medium {
+      display: flex;
+      width: 80%;
+    }
+
+    input {
+      width: 100%;
+      margin: 5px 5px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      height: 30px;
+      padding: 5px;
+    }
+
+    select {
+      width: 100%;
+      margin: 5px 5px;
+      height: 30px;
+      border-radius: 5px;
+    }
+  }
+
+  .button {
+    width: 80%;
+    margin-top: 5px;
+    padding: 8px 0;
+    align-self: center;
+
+    @include mixin.small {
+      width: 35%;
+    }
+
+    @include mixin.medium {
+      width: 18%;
+    }
+  }
+}

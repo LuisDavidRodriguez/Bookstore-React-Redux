@@ -1,5 +1,17 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixin';
+
 .booksContainer {
   width: 80%;
-  max-width: 700px;
+  max-width: 900px;
   min-width: 180px;
+  margin-top: v.$navHeightMobile + 20px;
+
+  @include mixin.customMin(280) {
+    margin-top: v.$navHeightMobile2 + 20px;
+  }
+
+  @include mixin.small {
+    margin-top: v.$navHeightMobile3 + 20px;
+  }
 }

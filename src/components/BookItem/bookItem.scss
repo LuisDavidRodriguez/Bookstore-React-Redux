@@ -1,5 +1,6 @@
 @use '../../styles/mixin';
 @use '../../styles/variables' as v;
+@use '../../styles/functions' as f;
 
 .bookContainer {
   display: flex;
@@ -11,16 +12,6 @@
   border-radius: 5px;
   box-shadow: 3px 2px 5px lightgray, -1px -1px 5px lightgray;
 
-  @include mixin.small {
-    height: 300px;
-  }
-
-  @include mixin.customMin (580) {
-    flex-direction: row;
-    height: 150px;
-    align-items: center;
-  }
-
   .bookBody {
     width: 100%;
     display: flex;
@@ -28,20 +19,13 @@
     flex-direction: column;
     padding: 5px;
 
-    @include mixin.small {
-      flex-direction: row;
-    }
-
-    @include mixin.customMin(580) {
-      width: 70%;
-    }
-
-
     .infoBook {
       width: 100%;
 
-      @include mixin.small {
-        width: 60%;
+      .category {
+        color: lighten($color: #000, $amount: 50);
+        font-size: 0.9em;
+        font-weight: bold;
       }
 
       .title {
@@ -51,31 +35,28 @@
         overflow-y: hidden;
       }
 
+      .author {
+        color: lighten($color: f.getcolor('primary'), $amount: 10);
+        font-size: 0.9em;
+        margin-top: 3px;
+      }
+
       .buttonsContainer {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 5px;
-
-        @include mixin.small {
-          justify-content: start;
-        }
       }
     }
 
-    .graphicContainer {      
+    .graphicContainer {
       width: 100%;
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
-      @include mixin.small {
-        width: 40%;
-        margin-top: 0;
-      }
     }
   }
 
@@ -85,11 +66,6 @@
     height: 2px;
     width: 90%;
     align-self: center;
-
-    @include mixin.customMin (580) {
-      height: 90%;
-      width: 2px;
-    }
   }
 
   .bookFooter {
@@ -98,16 +74,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;    
-
-    @include mixin.customMin (580) {
-      height: 100%;
-      width: 30%;      
-      margin-left: 5px;
-      justify-content: center;
-      align-items: flex-start;
-      margin-left: 20px;
-    }
+    align-items: center;
 
     &__title {
       color: gray;
@@ -116,6 +83,54 @@
 
     .mt-20 {
       margin-top: 20px;
+    }
+  }
+}
+
+@include mixin.small {
+  .bookContainer {
+    height: 300px;
+
+    .bookBody {
+      flex-direction: row;
+
+      .infoBook {
+        width: 60%;
+
+        .buttonsContainer {
+          justify-content: start;
+        }
+      }
+
+      .graphicContainer {
+        width: 40%;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include mixin.customMin (580) {
+  .bookContainer {
+    flex-direction: row;
+    height: 150px;
+    align-items: center;
+
+    .bookBody {
+      width: 70%;
+    }
+
+    hr {
+      height: 90%;
+      width: 2px;
+    }
+
+    .bookFooter {
+      height: 100%;
+      width: 30%;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 20px;
     }
   }
 }

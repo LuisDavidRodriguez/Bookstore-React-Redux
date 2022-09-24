@@ -7,6 +7,30 @@
 
   @else {
     @warn "Unfortunately, no value could be retreived with key: `#{$key}`."
-      + " Available color are: #{map-keys(v.$breakPoints)}.";
+      + " Available breakPoints are: #{map-keys(v.$breakPoints)}.";
+  }
+}
+
+@function getcolor($key: 'primary') {
+  @if map-has-key(v.$colors,  $key) {
+    @return map-get(v.$colors, $key );
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retreived with key: `#{$key}`."
+      + " Available color are: #{map-keys(v.$colors)}.";
+  }
+}
+
+/// retreive the z-index and validate the key
+/// @param {String} $key -  the zindex
+@function getzindex($key: 'navigation') {
+  @if map-has-key(v.$zIndex ,  $key) {
+    @return map-get(v.$zIndex , $key );
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retreived with key: `#{$key}`."
+      + " Available z-index are: #{map-keys(v.$zIndex)}.";
   }
 }

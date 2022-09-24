@@ -1,9 +1,9 @@
-
 // https://gosnippets.com/snippets/circular-progress-bar-using-html-css-javascript-snippet
 // this item is borrow from the link above
 // I understand the code and I'm adding the comments to be able
 // to use and move the bar with javaScript
 // principal container
+@use '../../styles/functions' as f;
 
 .circular {
   height: 100px;
@@ -48,9 +48,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  font-size: 18px;
   font-weight: 500;
-  color: #4158d0;
+  color: f.getcolor("primary");
   font-size: 0.9em;
   text-align: center;
 }
@@ -76,7 +75,7 @@
 
 .circle .bar .progress,
 .dot span {
-  background: #4158d0;
+  background: f.getcolor('primary');
 }
 
 .circle .right {
@@ -103,9 +102,9 @@ $dotSpeed: $fillSpeed * 2;
 // how to manipulate this with javaScript this is the first half so it comes from
 // 0deg to 180deg this circle should start moving when the percentage of the data
 // reach is from 0, so when you want to reprecent from 0% to 50% you move now this one
-// so because you have 2 independent halves if you want to represent 20% you need to move this 
+// so because you have 2 independent halves if you want to represent 20% you need to move this
 // half the equatity if 180deg per 20% and the other half must be 0deg
-// if you want to 
+// if you want to
 // .circle .left .progress{
 //  transform: rotate(0deg);
 // }
@@ -154,8 +153,8 @@ $dotSpeed: $fillSpeed * 2;
 }
 
 // Luisda comments
-// TO MOVE WITH JAVA SCRIPT maybe ignore this keyframe but continue transforming it 
-// and instead of keyframe we can use only a transition in the 
+// TO MOVE WITH JAVA SCRIPT maybe ignore this keyframe but continue transforming it
+// and instead of keyframe we can use only a transition in the
 // principal dot!
 // you can create maybe pass with java script the property transform from -90 to 270deg being 100%
 // being -90 0% and 270 being 100%
