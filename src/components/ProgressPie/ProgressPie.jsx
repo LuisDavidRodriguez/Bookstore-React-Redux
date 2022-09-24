@@ -7,7 +7,7 @@ const ProgressPie = () => {
     <div className="circular">
       <div className="inner" />
       <div className="outer" />
-      <div className="numb">65%</div>
+      <div className="numb">65% Completed</div>
       <div className="circle">
         <div className="dot">
           <span />

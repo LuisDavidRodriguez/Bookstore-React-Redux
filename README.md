@@ -1,20 +1,29 @@
 # Bookstore
 
+## Built With
+
+- JavaScript
+- SASS
+- HTML
+- WebPack
+- React
+
 > Description the project.
 This project demostrate the abilities working with React and redux!
 
 ![Mi video-8](https://user-images.githubusercontent.com/105079888/190526615-f35fa0bc-3c6c-469e-a485-42c25a5260f3.gif)
 
+## Styled with SASS following Mobile-First approach
+> I wanted to find the correct way to use SASS with React, and I followed the guidelines for SASS-React found [in this link](https://github.com/GedalyaKrycer/the-shoppies/tree/main/the-shoppies/src)
 
+<br />
 
+![Mi video-16](https://user-images.githubusercontent.com/105079888/192074807-b00ce794-fbea-41c6-92c7-2120e8e01e7c.gif)
 
-## Built With
+![image](https://user-images.githubusercontent.com/105079888/192074925-bda35f69-09f8-4853-b8dd-9404133dd107.png)
 
-- JavaScript
-- CSS
-- HTML
-- WebPack
-- React
+![image](https://user-images.githubusercontent.com/105079888/192074938-913c6e51-9f3f-4c32-9e5d-8524ee3c3e3e.png)
+
 
 ## Live Demo
 [No demo abailable yet]()

@@ -1,0 +1,82 @@
+@use '../../styles/mixin';
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
+
+.navBar {
+  // base size screens
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: v.$navHeightMobile;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 3px 5px gray;
+  z-index: f.getzindex('navigation');
+  background-color: white;
+  min-width: 180px;
+
+  @include mixin.customMin(280) {
+    height: v.$navHeightMobile2;
+  }
+
+  @include mixin.small {
+    flex-direction: row;
+    height: v.$navHeightMobile3;
+  }
+
+  .title {
+    color: f.getcolor("primary");
+  }
+
+  .linkContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+
+    @include mixin.small {
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .link {
+      color: gray;
+      text-decoration: none;
+      margin: 4px 10px;
+      background: linear-gradient(f.getcolor() 0 0) calc(100% - var(--p, 0%)) / var(--p, 0%) no-repeat;
+      transition: 0.4s, background-position 0s;
+      padding: 5px;
+
+      &:hover {
+        // hover effect from
+        // https://css-tricks.com/cool-hover-effects-using-background-properties/
+        cursor: pointer;
+
+        --p: 100%;
+
+        color: white;
+      }
+    }
+
+    .userIcon {
+      border-radius: 50%;
+      width: 45px;
+      height: auto;
+
+      @include mixin.small {
+        margin-left: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+      }
+    }
+  }
+}

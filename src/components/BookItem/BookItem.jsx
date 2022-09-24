@@ -38,7 +38,7 @@ const BookItem = (props) => {
       <article className="bookFooter">
         <p className="bookFooter__title">Current Chapter</p>
         <p className="bookFooter__chapter">Chapter 19</p>
-        <button className="btn2" type="button">Update Progress</button>
+        <button className="btn2 mt-20" type="button">Update Progress</button>
       </article>
     </li>
   );

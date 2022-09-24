@@ -1,0 +1,48 @@
+@use './variables' as v;
+@use './functions' as f;
+
+.button {
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+  font-size: 1em;
+  font-family: v.$fontFamilyRobotoSlab;
+}
+
+.btn1 {
+  @extend .button;
+
+  border: none;
+  color: lighten($color: f.getcolor('primary'), $amount: 10);
+  font-weight: 400;
+  padding: 0 3px;
+  margin: 3px;
+  background: linear-gradient(f.getcolor() 0 0) calc(100% - var(--p, 0%)) / var(--p, 0%) no-repeat;
+  transition: 0.4s, background-position 0s;
+
+  &:hover {
+    // hover effect from
+    // https://css-tricks.com/cool-hover-effects-using-background-properties/
+    cursor: pointer;
+
+    --p: 100%;
+
+    color: white;
+  }
+}
+
+.btn2 {
+  @extend .button;
+
+  border: none;
+  color: white;
+  border-radius: 3px;
+  background-color: map-get(v.$colors, "primary");
+  font-weight: 300;
+  padding: 2px 10px;
+
+  &:hover {
+    background-color: lighten(map-get(v.$colors, "primary"), $amount: 5);
+    transform: scale(1.01);
+  }
+}

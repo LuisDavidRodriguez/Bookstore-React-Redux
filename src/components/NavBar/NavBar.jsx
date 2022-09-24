@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './navBar.scss';
+import styles from './navBar.module.scss';
+import userIcon from './userIcon.png';
 
 const NavBar = () => (
-  <div className="navBar">
+  <div className={styles.navBar}>
     <div>
-      <h1>Bookstore</h1>
+      <h1 className={styles.title}>Bookstore</h1>
     </div>
-    <div>
-      <Link to="/Books" className="link">Books</Link>
-      <Link to="/Categories" className="link">Categories</Link>
+    <div className={styles.linkContainer}>
+      <Link to="/Books" className={styles.link}>Books</Link>
+      <Link to="/Categories" className={styles.link}>Categories</Link>
+      <img src={userIcon} className={styles.userIcon} alt="User icon" />
     </div>
   </div>
 );
