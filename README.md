@@ -13,7 +13,7 @@ This project demostrate the abilities working with React and redux!
 
 ![Mi video-8](https://user-images.githubusercontent.com/105079888/190526615-f35fa0bc-3c6c-469e-a485-42c25a5260f3.gif)
 
-## Styled with SASS
+## Styled with SASS following Mobile-First approach
 > I wanted to find the correct way to use SASS with React, and I followed the guidelines for SASS-React found [in this link](https://github.com/GedalyaKrycer/the-shoppies/tree/main/the-shoppies/src)
 
 <br />
